@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pier JS Tests</title>
+        <link rel="stylesheet" href="static/qunit-1.11.0.css">
+    </head>
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <div class="hello">
+            <form>
+                <input type="text" name="name" />
+                <input type="submit" value="submit" />
+            </form>
+            <p>hello <label></label></p>
+        </div>
+
+        <script src="static/qunit-1.11.0.js"></script>
+        <script src="../lib/require.js"></script>
+        <script type="text/javascript">
+            requirejs.config({
+                baseUrl: "../"
+            })
+        </script>
+        <script src="../requirejs-config.js"></script>
+        <script>
+            asyncTest("test demo", 1, function() {
+                require(['demo'], function() {
+                    $wrap = $(".hello")
+                    $("input[type='text']", $wrap).val("Bob")
+                    $("form").submit()
+                    equal($("label", $wrap).text(), "Bob")
+                    start()
+                });
+            });
+        </script>
+    </body>
+</html>

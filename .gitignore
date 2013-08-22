@@ -1,0 +1,47 @@
+*.py[cod]
+*.sqlite
+
+# C extensions
+*.so
+
+.cache
+.pip.log
+node_modules
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+#vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+*.orig
+
+#emacs
+\#*\#
+\.\#*
+
+#OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
