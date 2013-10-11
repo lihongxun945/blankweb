@@ -41,22 +41,17 @@ module.exports = (grunt) ->
         qunit:
             all: ['<%= js_root %>/tests/**/*.html']
         watch:
+            options:
+                livereload: true
             css:
-                options:
-                    livereload: true
                 files: ['<%= less_root %>/**/*.less']
                 tasks: ['less:development']
             html:
-                options:
-                    livereload: true
-                    port: 35728
                 files: ['**/*.html']
             js:
-                options:
-                    livereload: true
-                    port: 35727
                 files: ['<%= coffee_root%>/**/*.coffee']
-                tasks: ['coffee', 'requirejs:development']
+                tasks: ['coffee']
+                #tasks: ['coffee', 'requirejs:development']
 
     grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-contrib-less'
