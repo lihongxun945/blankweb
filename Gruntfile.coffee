@@ -14,7 +14,7 @@ module.exports = (grunt) ->
                 options:
                     compress: true
                 src: '<%= less_root%>/entry.less'
-                dest: '<%= css_root%>/app.css'
+                dest: '<%= css_root%>/app.min.css'
         coffee:
             compile:
                 expand: true
@@ -27,17 +27,23 @@ module.exports = (grunt) ->
             development:
                 options:
                     baseUrl: "<%= js_root %>"
-                    name: "entry"
+                    name: "almond"
                     optimize: "none"
+                    include: 'entry'
+                    insertRequire: ['entry']
                     mainConfigFile: "<%= js_root%>/requirejs-config.js"
                     out: "<%= js_root %>/app.js"
+                    wrap: true
             production:
                 options:
                     baseUrl: "<%= js_root %>"
-                    name: "entry"
+                    name: "almond"
+                    include: 'entry'
+                    insertRequire: ['entry']
                     optimize: "uglify2"
                     mainConfigFile: "<%= js_root %>/requirejs-config.js"
                     out: "<%= js_root %>/app.min.js"
+                    wrap: true
         qunit:
             all: ['<%= js_root %>/tests/**/*.html']
         watch:

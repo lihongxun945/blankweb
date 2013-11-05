@@ -3,7 +3,8 @@
     paths: {
       "jquery": "lib/jquery-1.10.2",
       "backbone": "lib/backbone",
-      "underscore": "lib/underscore"
+      "underscore": "lib/underscore",
+      "almond": "lib/almond"
     },
     shim: {
       "backbone": {
