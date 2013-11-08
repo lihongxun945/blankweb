@@ -6,7 +6,7 @@
 * coffeescript, 建议使用coffee来写js，当然不是强制的
 * less, 还默认引入了bootstrap中的三个文件normalize.less, variable.less, mixin.less，可以根据自己的喜好修改
 * qunit, 用于做单元测试
-* glue, 用于自动合并sprite,并生成less文件
+* glue, 用于自动合并sprite,并生成less文件, 详情参考 [glue](http://glue.readthedocs.org/en/latest/quickstart.html)
 
 # 如何安装
 直接在根目录下执行 `npm install` 即可。
