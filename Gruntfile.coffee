@@ -1,3 +1,4 @@
+exec = require("child_process").exec
 module.exports = (grunt) ->
     grunt.initConfig
         pkg: grunt.file.readJSON 'package.json'
@@ -65,6 +66,10 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-requirejs'
     grunt.loadNpmTasks 'grunt-contrib-qunit'
 
-    grunt.registerTask 'default', ['less:development', 'coffee', 'qunit', 'requirejs:development']
-    grunt.registerTask 'production', ['less:production', 'coffee', 'qunit', 'requirejs:production']
+    grunt.registerTask 'glue', 'create sprite', ->
+        done = this.async()
+        child = exec 'cd assets && glue icon --less --css less --img sprite', (e)-> done()
+
+    grunt.registerTask 'default', ['less:development', 'coffee', 'qunit', 'requirejs:development', 'glue']
+    grunt.registerTask 'production', ['less:production', 'coffee', 'qunit', 'requirejs:production', 'glue']
     grunt.registerTask 'test', ['qunit']
