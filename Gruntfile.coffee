@@ -67,7 +67,7 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'glue', 'create sprite', ->
         done = this.async()
-        child = exec 'cd assets && glue icon --less --css --imagemagick less --img sprite', (e)-> done()
+        child = exec 'glue icon --less --imagemagick --css less --img dist/sprite', (e)-> done()
 
     grunt.registerTask 'default', ['glue', 'less:development', 'coffee', 'qunit', 'requirejs:development']
     grunt.registerTask 'production', ['glue', 'less:production', 'coffee', 'qunit', 'requirejs:production']
