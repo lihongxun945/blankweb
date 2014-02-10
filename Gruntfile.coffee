@@ -2,11 +2,10 @@ exec = require("child_process").exec
 module.exports = (grunt) ->
     grunt.initConfig
         pkg: grunt.file.readJSON 'package.json'
-        assets: 'assets'
-        js_root: '<%= assets %>/js'
-        coffee_root: '<%= assets %>/coffee'
-        css_root: '<%= assets %>/css'
-        less_root: '<%= assets %>/less'
+        js_root: 'dist/js'
+        coffee_root: 'coffee'
+        css_root: 'dist/css'
+        less_root: 'less'
         less:
             development:
                 src: '<%= less_root %>/entry.less'
